@@ -132,4 +132,8 @@ document.getElementById('registerBtn').addEventListener('click', function(e) {
     const modal = new bootstrap.Modal(document.getElementById('registerModal'));
     modal.show();
   }
+
+  else {
+    form.classList.add('was-validated');
+  }
 });
