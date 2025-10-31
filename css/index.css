@@ -83,6 +83,10 @@ input:not([type="radio"], .inlineForm input) {
         margin-bottom: unset !important
     }
 
+    .form-label {
+        margin-bottom: unset !important;
+    }
+
 }
 
 #studentImage {
@@ -105,6 +109,15 @@ input:not([type="radio"], .inlineForm input) {
     background: white;
     object-fit: cover;
     position: relative;
+}
+
+.was-validated #studentImage:has(:valid) #imagePreview,
+.was-validated #studentImage:has(:valid) #imagePreview.has-image {
+    border-color: var(--bs-form-valid-border-color);
+}
+.was-validated #studentImage:has(:invalid) #imagePreview, 
+.was-validated #studentImage:has(:invalid) #imagePreview.has-image {
+    border-color: var(--bs-form-invalid-border-color);
 }
 
 #imagePreview:hover {

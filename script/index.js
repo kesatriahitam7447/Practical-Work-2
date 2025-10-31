@@ -121,3 +121,15 @@ function showEmailPopover(element) {
   });
   popover.show();
 }
+
+//check the whole form validation
+document.getElementById('registerBtn').addEventListener('click', function(e) {
+  e.preventDefault();
+  const form = document.getElementById('registerForm');
+  
+  if (form.checkValidity()) {
+    // Form is valid, show modal
+    const modal = new bootstrap.Modal(document.getElementById('registerModal'));
+    modal.show();
+  }
+});
