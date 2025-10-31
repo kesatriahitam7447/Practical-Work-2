@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bloom College</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body style="">
+    
+    <form id="registerForm" class="forms container flex-column" style="white-space: nowrap;">
+        
+        <div style="margin: auto; margin-bottom: 50px" class="container flex-column title mt-5">
+            <h1>Bloom College</h1>
+            <h4>Student Registration Form</h4>  
+        </div>
+        
+        <div class="d-flex flex-column align-items-center">
+            <label for="studentImage" id="studentImageLabel" class="form-label text-center">Student Image</label>
+            <div name="studentImage" id="studentImage" class="flex-column" style="display: flex">
+                <img id="imagePreview" class="form-control p-0" src="#" alt="">
+                <input type="file" id="studentImageInput" accept="image/*" required>
+            </div>
+        </div>
+
+        <div class=""><label for="studentName">Student's Name</label><input type="text" name="studentName" class="form-control" onchange="value = value.toUpperCase()" placeholder="Full name" required></div>
+        <div class=""><label for="fatherName">Father's Name</label><input type="text" name="fatherName" class="form-control" onchange="value = value.toUpperCase()" placeholder="Father's Full Name" required></div>
+        <div class=""><label for="motherName">Mother's Name</label><input type="text" name="motherName" class="form-control" onchange="value = value.toUpperCase()" placeholder="Mother's Full Name" required></div>
+        
+        <div class="inlineForm">
+            <div class="d-flex flex-row align-items-center" style="margin-bottom: 10px; margin-right: 50px" id="genderCheck">
+            <label for="gender">Gender</label>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" value="Male" required>
+            <label class="form-check-label" for="Male">Male</label></div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" value="Female">
+            <label class="form-check-label" for="female">Female</label>
+            </div>
+            </div>
+
+            <div class="d-flex flex-row align-items-center" id="emailSection" style="flex: 1">
+            <label class="" for="email">E-mail</label>
+            <input type="email" class="form-control" name="email" onfocus="showEmailPopover(this)" onblur="validateEmail(this)" id="mailInput" placeholder="example@domain.com" required>
+            </div>
+        </div>
+        
+        <div class="inlineForm">
+            <label for="level">Level</label>
+            <select name="level" class="form-select" required>
+                <option value="diploma" selected>Diploma</option>
+                <option value="degree">Degree</option>
+                <option value="bachelor">Bachelor</option>
+                <option value="phd">PhD</option>
+            </select>
+
+        <label for="department" style="">Department</label>
+        <select name="department" class="form-select" required>
+            <option disabled selected value>Department</option>
+            <option value="accounting">Accounting</option>
+            <option value="architecture">Architeture and Engineering</option>
+            <option value="compEngineering">Computer Engineering</option>
+            <option value="biochemistry">Biochemistry</option>
+            <option value="law">Law Studies</option>
+            <option value="philosophy">Philosophy</option>
+        </select>
+        </div>
+
+        <div class="inlineForm">
+        <label for="telephoneNo">Tel/Mobile</label><input id="telephoneNo" class="form-control" name="telephoneNo" type="tel" pattern="[0-9]{3}-[0-9]{7}|[0-9]{3}-[0-9]{8}" placeholder="0XX-XXXXXXX" onblur="validatePhone(this)" required/>
+        
+            <label for="birthDate" class="form-label">Date of Birth</label>
+            <input type="date" class="form-control" required>
+        </div>
+
+
+    <span class="divider"></span>
+
+        <div style="margin: auto; text-transform: uppercase;" class="container flex-column">
+            <h2 class="text-center">Address</h2>  
+        </div>
+    
+
+        <div><label class="form-label" for="state">State</label><input type="text" class="form-control" name="state" required></div>
+        <div><label class="form-label" for="city">City</label><input type="text" class="form-control" name="city" required></div>
+        <div><label class="form-label" for="postcode">Postcode</label><input type="number" class="form-control" name="postcode" max="999999" required></div>
+        
+        <span class="divider"></span>
+
+        <div class="container pb-5 justify-content-center" style="margin: auto;" >
+        <button class="btn btn-lg btn-primary mx-3" type="submit" form="registerForm" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
+        <button class="btn btn-lg btn-danger mx-3" type="reset">Reset</button>
+        </div>
+
+        <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="registerModalLabel">Confirmation</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure that your information is correct?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Proceed</button>
+            </div>
+            </div>
+        </div>
+        </div>
+
+    </form>
+
+    <script src="script/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

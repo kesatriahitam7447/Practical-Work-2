@@ -1,0 +1,167 @@
+.container {
+    display: flex;
+    margin: auto;
+}
+
+.title {
+    text-transform: uppercase;
+    text-align: center;
+    gap: 15px;
+}
+
+.title * {margin: unset;}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.divider {
+    width: 100%;
+    border-bottom: .5px solid rgb(192, 192, 192);
+    margin: 20px 0;
+}
+
+.forms > div {
+    margin-bottom: 10px;
+}
+
+label {
+    display: inline-block;
+    width: 200px;
+}
+
+input[type="radio"] + label {
+    width: 100px
+}
+
+input:not([type="radio"], .inlineForm input) {
+    display: block;
+    width: -webkit-fill-available;
+}
+
+@media (max-width: 992px) {
+    #emailSection {
+        flex-direction: column !important;
+        align-items: start !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .inlineForm {
+        display: flex;
+        align-items: center;
+    }
+
+    .inlineForm label {
+        width: fit-content;
+        margin-right: 25px;
+    }
+
+    .inlineForm select,
+    .inlineForm input:not([type="radio"]) {
+        width: -webkit-fill-available;
+        margin-right: 100px;
+    }
+
+    .form-check .form-check-label {
+        margin-right: 10px;
+    }
+
+    .inlineForm :last-child {
+        margin-right: unset !important;
+    } 
+
+    .form-select[name="level"] {
+        width: 40%;
+    }
+
+    #genderCheck {
+        margin-bottom: unset !important
+    }
+
+}
+
+#studentImage {
+    position: relative;
+    width: 100px;
+    height: 125px;
+}
+
+#imagePreview {
+    width: 100%;
+    height: 100%;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+    object-fit: cover;
+    position: relative;
+}
+
+#imagePreview:hover {
+    border-color: #007bff;
+    background: #f8f9ff;
+}
+
+/* Upload icon - Image icon with outline */
+#imagePreview:not([src]):before,
+#imagePreview[src="#"]:before,
+#imagePreview[src=""]:before {
+    content: "";
+    display: block;
+    width: 35px;
+    height: 35px;
+    background-image: url('data:image/svg+xml,<svg viewBox="0 0 24 24" fill="none" stroke="%23999" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: -8px;
+}
+
+/* Upload text */
+#imagePreview:not([src]):after,
+#imagePreview[src="#"]:after,
+#imagePreview[src=""]:after {
+    content: "Upload Image";
+    color: #666;
+    font-size: 11px;
+    font-weight: 500;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    white-space: nowrap;
+    width: 90px;
+}
+
+#studentImageInput {
+    display: none !important;
+}
+
+/* When image is loaded, show it properly */
+#imagePreview.has-image {
+    border: 2px solid #ccc;
+    padding: 0;
+}
+
+#imagePreview.has-image:before,
+#imagePreview.has-image:after {
+    display: none;
+}
+
+button {
+    margin: 0 10px;
+}
